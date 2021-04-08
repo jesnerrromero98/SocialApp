@@ -1,200 +1,198 @@
-import React, { Component } from 'react';
-import  { Image, Linking , StyleSheet }
-from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+importar  Reaccionar ,  {  Componente  }  de  'reaccionar' ;
+importar   {  Image ,  Linking  ,  StyleSheet  }
+de  'react-native' ;
+importación  {  Container ,  encabezado ,  contenido ,  tarjeta ,  CardItem ,  en miniatura ,  texto ,  botón ,  icono ,  izquierda ,  cuerpo ,  Derecha  }  de  'nativo-base' ;
 
 
 
-export default class DetailsScreen extends Component {
+exportar  clase predeterminada  DetailsScreen amplía Componente {    
 
-  render() {
+  render ( )  {
     
-    const handleCallPress = async() =>{
-      Linking.openURL("tel: 25122727");
-    };
-    const handleCall2Press = async() =>{
-        Linking.openURL("tel: 25121212");
-    };
-    const handleCall3Press = async() =>{
-      Linking.openURL("tel: 25121949");
-    };
-    return (
-      <Container style = {styles.fondo}>
-        <Header style = {styles.container}>
-        <Text style = {styles.titulo}>Numeros de Emergencia</Text>
-        </Header>
-        <Content >
-        <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}
-            >
-              
-              <Left >
-                <Thumbnail 
-                source={require('./../assets/poli.png')} 
-                style = {styles.imagen}
-                />
-                <Body>
-                  <Text style = {styles.tit2} >Policia Nacional</Text>
-                  <Text style = {styles.ti1} >Juigalpa,CHontales</Text>
-                </Body>
-              </Left>
+    const  handleCallPress  =  async ( )  => {
+      Vinculación . openURL ( "tel: 25122727" ) ;
+    } ;
+    const  handleCall2Press  =  async ( )  => {
+        Vinculación . openURL ( "tel: 25121212" ) ;
+    } ;
+    const  handleCall3Press  =  async ( )  => {
+      Vinculación . openURL ( "tel: 25121949" ) ;
+    } ;
+    retorno  (
+      < Estilo de contenedor  = { estilos . fondo } >  
+        < Estilo de encabezado  = { estilos . contenedor } >  
+        < Estilo de texto  = { estilos . titulo } > Numeros de Emergencia < / Text >  
+        < / Encabezado >
+        < Contenido  >
+        < Estilo de texto  = { estilos . separador } > < / Texto >  
+            < CardItem  style  =  { estilos . columna } >
+              < Izquierda  >
+                < Miniatura 
+                source = { require ( './../assets/poli.png' ) } 
+                style  =  { estilos . imagen }
+                / >
+                < Cuerpo >
+                  < Estilo de texto  = { estilos . tit2 } > Policia Nacional < / Text >   
+                  < Estilo de texto  = { estilos . ti1 } > Juigalpa, CHontales < / Text >   
+                < / Cuerpo >
+              < / Izquierda >
              
-                <Button onPress={handleCallPress} style = {styles.But} >
+                < Botón  onPress = { handleCallPress }  style  =  { estilos . Pero }  >
                    
-                  <Text style = {styles.icon}>Llamar</Text>
-                </Button>
+                  < Estilo de texto  = { estilos . icono } > Llamar < / Texto >  
+                < / Botón >
             
           
-                <Button 
-                  onPress={() => { this.props.navigation.navigate('Webview')}}
-                  style = {styles.But2}>
+                < Botón 
+                  onPress = { ( )  =>  {  esto . utilería . navegación . navegar ( 'Inicio' ) } }
+                  style  =  { estilos . But2 } >
             
-                  <Text style = {styles.ic2} >Detalle</Text>
-                </Button>
+                  < Estilo de texto  = { estilos . ic2 } > Detalle < / Texto >   
+                < / Botón >
             
-              <Right>       
-              </Right>
-            </CardItem>
+              < Derecha >       
+              < / Derecha >
+            < / CardItem >
             
-            <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}>
-              <Left >
-                <Thumbnail 
-                source={require('./../assets/Cruz-Roja.jpg')} 
-                style = {styles.imagen}
-                />
-                <Body>
-                  <Text style = {styles.tit2} >Cruz Roja</Text>
-                  <Text style = {styles.ti1} >Juigalpa,CHontales</Text>
-                </Body>
-              </Left>
-              <Button onPress={handleCall2Press} style = {styles.But} >
+            < Estilo de texto  = { estilos . separador } > < / Texto >  
+            < CardItem  style  =  { estilos . columna } >
+              < Izquierda  >
+                < Miniatura 
+                fuente = { require ( './../assets/Cruz-Roja.jpg' ) } 
+                style  =  { estilos . imagen }
+                / >
+                < Cuerpo >
+                  < Estilo de texto  = { estilos . tit2 } > Cruz Roja < / Text >   
+                  < Estilo de texto  = { estilos . ti1 } > Juigalpa, CHontales < / Text >   
+                < / Cuerpo >
+              < / Izquierda >
+              < Botón  onPress = { handleCall2Press }  style  =  { styles . Pero }  >
                    
-                  <Text style = {styles.icon}>Llamar</Text>
-                </Button>
+                  < Estilo de texto  = { estilos . icono } > Llamar < / Texto >  
+                < / Botón >
             
           
-                <Button style = {styles.But2}>
+                < Estilo de botón  = { estilos . But2 } >  
                
-                  <Text style = {styles.ic2} >Detalle</Text>
-                </Button>
-              <Right>
+                  < Estilo de texto  = { estilos . ic2 } > Detalle < / Texto >   
+                < / Botón >
+              < Derecha >
        
-              </Right>
-            </CardItem>
+              < / Derecha >
+            < / CardItem >
 
-            <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}>
-              <Left >
-                <Thumbnail 
-                source={require('./../assets/bomberos.jpg')} 
-                style = {styles.imagen}
-                />
-                <Body>
-                  <Text style = {styles.tit2} >Bomberos</Text>
-                  <Text style = {styles.ti1} >Juigalpa,CHontales</Text>
-                </Body>
-              </Left>
+            < Estilo de texto  = { estilos . separador } > < / Texto >  
+            < CardItem  style  =  { estilos . columna } >
+              < Izquierda  >
+                < Miniatura 
+                source = { require ( './../assets/bomberos.jpg' ) } 
+                style  =  { estilos . imagen }
+                / >
+                < Cuerpo >
+                  < Estilo de texto  = { estilos . tit2 } > Bomberos < / Text >   
+                  < Estilo de texto  = { estilos . ti1 } > Juigalpa, CHontales < / Text >   
+                < / Cuerpo >
+              < / Izquierda >
           
-                  <Button onPress={handleCall3Press} style = {styles.But} >
-                    <Text style = {styles.icon}>Llamar</Text>
-                  </Button>
-                  <Button style = {styles.But2}>
-                    <Text style = {styles.ic2} >Detalle</Text>
-                  </Button>
-              <Right>
+                  < Botón  onPress = { handleCall3Press }  style  =  { styles . Pero }  >
+                    < Estilo de texto  = { estilos . icono } > Llamar < / Texto >  
+                  < / Botón >
+                  < Estilo de botón  = { estilos . But2 } >  
+                    < Estilo de texto  = { estilos . ic2 } > Detalle < / Texto >   
+                  < / Botón >
+              < Derecha >
        
-              </Right>
-            </CardItem>
-            <Text style = {styles.separador}></Text>
+              < / Derecha >
+            < / CardItem >
+            < Estilo de texto  = { estilos . separador } > < / Texto >  
             
-        <Header style = {styles.container}>
-        <Text style = {styles.titulo}>Contacto de Emergencia</Text>
-        </Header>
-        </Content>
-      </Container>
-    );
+        < Estilo de encabezado  = { estilos . contenedor } >  
+        < Estilo de texto  = { estilos . titulo } > Contacto de Emergencia < / Text >  
+        < / Encabezado >
+        < / Contenido >
+      < / Contenedor >
+    ) ;
   }
 }
-const styles =  StyleSheet.create({
-  container:{
-      backgroundColor: '#9599B3',
-      flexDirection: 'column',
-      alignItems: 'center',
+ estilos  const =   StyleSheet . crear ( {
+  contenedor : {
+      backgroundColor : '# 9599B3' ,
+      flexDirection : 'columna' ,
+      alignItems : 'centro' ,
     
-  },
-  titulo:{
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: "#ffffff",
-    textAlign:'center'
-},
+  } ,
+  titulo : {
+    fontSize : 20 ,
+    fontWeight : 'negrita' ,
+    color : "#ffffff" ,
+    textAlign : 'centro'
+} ,
 
-tit2:{
-  fontSize: 18,
-  fontWeight: 'bold',
-  marginTop:30,
-  marginStart:10,
-  color: '#98cb40',
-  textAlign:'auto'
-},
-ti1:{
-  fontSize: 14,
-  fontWeight: 'bold',
-  color: '#98cb40',
- marginTop:1,
-  marginHorizontal:10,
-  textAlign:'auto'
-},
-columna:{
-  flexDirection: 'column',
+tit2 : {
+  fontSize : 18 ,
+  fontWeight : 'negrita' ,
+  marginTop : 30 ,
+  marginStart : 10 ,
+  color : '# 98cb40' ,
+  textAlign : 'auto'
+} ,
+ti1 : {
+  fontSize : 14 ,
+  fontWeight : 'negrita' ,
+  color : '# 98cb40' ,
+ marginTop : 1 ,
+  marginHorizontal : 10 ,
+  textAlign : 'auto'
+} ,
+columna : {
+  flexDirection : 'columna' ,
  
-  width: '95%',
-  backgroundColor: '#8A56AC',
-  height: 180,
-  borderTopRightRadius: 15,
-  marginLeft: 10,
-  marginHorizontal: 10,
-},
-fondo:{
-  backgroundColor: '#261237',
-},
+  ancho : '95% ' ,
+  backgroundColor : '# 8A56AC' ,
+  altura : 180 ,
+  borderRadius : 15 ,
+  marginLeft : 10 ,
+  marginHorizontal : 10 ,
+} ,
+fondo : {
+  backgroundColor : '# 261237' ,
+} ,
 
-imagen:{
-  width: 70,
-  height: 70,
-  resizeMode: 'cover',
-  borderRadius: 10,
-  marginLeft: 10,
-  marginTop: 70
-},
-separador: {
-  width: 10
-},
-icon:{
-  height: 75,
-  marginTop: 55,
-  marginLeft:3,
-  color: "#ffffff", 
+imagen : {
+  ancho : 70 ,
+  altura : 70 ,
+  resizeMode : 'cubierta' ,
+  borderRadius : 10 ,
+  marginLeft : 10 ,
+  margen superior : 70
+} ,
+separador : {
+  ancho : 10
+} ,
+icono : {
+  altura : 75 ,
+  marginTop : 55 ,
+  marginLeft : 3 ,
+  color : "#ffffff" , 
   
-},
-ic2:{
-  color: "#ffffff",    
-},
-But:{
-  width: 95,
-  height: 45,
-  marginTop:50,
-  marginLeft:90,
-  borderRadius:15,
-  backgroundColor:"#EF578E"
-},
-But2:{
-  width: 95,
-  height: 45,
-  margin:-45,
-  marginLeft:200,
-  borderRadius:15,
-  backgroundColor:"#EF578E"
-},
-})
+} ,
+ic2 : {
+  color : "#ffffff" ,    
+} ,
+Pero : {
+  ancho : 95 ,
+  altura : 45 ,
+  marginTop : 50 ,
+  marginLeft : 90 ,
+  borderRadius : 15 ,
+  backgroundColor : "# EF578E"
+} ,
+But2 : {
+  ancho : 95 ,
+  altura : 45 ,
+  margen : - 45 ,
+  marginLeft : 200 ,
+  borderRadius : 15 ,
+  backgroundColor : "# EF578E"
+} ,
+} )
