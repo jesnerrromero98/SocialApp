@@ -25,7 +25,9 @@ export default class DetailsScreen extends Component {
         </Header>
         <Content >
         <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}>
+            <CardItem style = {styles.columna}
+            >
+              
               <Left >
                 <Thumbnail 
                 source={require('./../assets/poli.png')} 
@@ -44,7 +46,7 @@ export default class DetailsScreen extends Component {
             
           
                 <Button 
-                  onPress={() => { this.props.navigation.navigate('Home')}}
+                  onPress={() => { this.props.navigation.navigate('Webview')}}
                   style = {styles.But2}>
             
                   <Text style = {styles.ic2} >Detalle</Text>
@@ -150,7 +152,7 @@ columna:{
   width: '95%',
   backgroundColor: '#8A56AC',
   height: 180,
-  borderRadius: 15,
+  borderTopRightRadius: 15,
   marginLeft: 10,
   marginHorizontal: 10,
 },

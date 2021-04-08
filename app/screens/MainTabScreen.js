@@ -9,8 +9,11 @@ import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
 import ExploreScreen from './ExploreScreen';
 import ProfileScreen from './ProfileScreen';
+import WebviewScreen from './WebviewScreen';
+import { TabRouter } from '@react-navigation/routers';
 
 const HomeStack = createStackNavigator();
+const WebStack= createStackNavigator();
 const DetailsStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
@@ -53,17 +56,33 @@ const MainTabScreen = () => (
           ),
         }}
       />
-      <Tab.Screen
-        name="Explore"
-        component={ExploreScreen}
-        options={{
-          tabBarLabel: 'Ayuda',
-          tabBarColor: '#d02860',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-people" color={color} size={26} />
-          ),
+     
+        <Tab.Screen
+        
+        name="Webview"
+        component={WebviewStackScreen}
+     
+        tabBarOptions={{
+          showLabel: false,
+           
         }}
+        options={{
+          tabBarIcon: () => {
+           
+          },
+          
+          tabBarLabel: "",
+          
+        }}
+        screenOptions={{
+          headerShown: false,
+        
+        }}
+        
+
+   
       />
+
        <Tab.Screen
         name="Settings"
         component={ExploreScreen}
@@ -76,6 +95,7 @@ const MainTabScreen = () => (
         }}
       />
     </Tab.Navigator>
+    
 );
 
 export default MainTabScreen;
@@ -115,5 +135,22 @@ const DetailsStackScreen = ({navigation}) => (
         )
         }} />
 </DetailsStack.Navigator>
+);
+const WebviewStackScreen = ({navigation}) => (
+  <WebStack.Navigator screenOptions={{
+          headerStyle: {
+          backgroundColor: '#1f65ff',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+          fontWeight: 'bold'
+          }
+      }}>
+          <WebStack.Screen name="Webview" component={WebviewScreen} options={{
+          headerLeft: () => (
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
+          )
+          }} />
+  </WebStack.Navigator>
 );
   
