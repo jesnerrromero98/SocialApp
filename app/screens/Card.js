@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import  { Image, Linking , StyleSheet }
+import  { Image, Linking , StyleSheet, TouchableOpacity }
 from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 
+class CardsScreen extends Component {
+
+  onPressx = () => {
+    this.props.navigation.navigate('Webview')
+  };
 
 
-export default class CardsScreen extends Component {
-
-  render() {
-    
+render(){
     return (
       <Container style = {styles.fondo}>
-
+        
         <Content >
+        <TouchableOpacity
+         onPress={this.onPressx}
+        >
         <Text style = {styles.separador}></Text>
             <CardItem style = {styles.columna}>
             <Text style = {styles.tit2} >Denuncia</Text>
@@ -23,14 +28,16 @@ export default class CardsScreen extends Component {
                 
                 />                           
           
- 
             
             </CardItem>
+            </TouchableOpacity>
                    </Content>
+                   
       </Container>
     );
   }
-}
+  }
+
 const styles =  StyleSheet.create({
   container:{
       backgroundColor: '#9599B3',
@@ -117,3 +124,5 @@ But2:{
   backgroundColor:"#EF578E"
 },
 })
+
+export default CardsScreen;
