@@ -18,36 +18,35 @@ const SplashScreen = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-          <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+          <StatusBar backgroundColor='#EF578E' barStyle="light-content"/>
         <View style={styles.header}>
             <Animatable.Image 
                 animation="bounceIn"
                 duraton="1500"
-            source={require('../assets/logo.png')}
+            source={require('../assets/log.png')}
             style={styles.logo}
             resizeMode="stretch"
             />
         </View>
         <Animatable.View 
             style={[styles.footer, {
-                backgroundColor: colors.background
-            }]}
+                backgroundColor: "#EF578E"           }]}
             animation="fadeInUpBig"
         >
             <Text style={[styles.title, {
-                color: colors.text
-            }]}>Servicos de emergencias!</Text>
-            <Text style={styles.text}>Sign in with account</Text>
+                color: 'white'
+            }]}>HATI-HATI</Text>
+            <Text style={styles.text}></Text>
             <View style={styles.button}>
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
                 <LinearGradient
-                    colors={['#08d4c4', '#01ab9d']}
+                    colors={['#DDE9EE', '#DDE9EE']}
                     style={styles.signIn}
                 >
                     <Text style={styles.textSign}>Get Started</Text>
                     <MaterialIcons 
                         name="navigate-next"
-                        color="#fff"
+                        color="black"
                         size={20}
                     />
                 </LinearGradient>
@@ -66,7 +65,7 @@ const height_logo = height * 0.28;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#009387'
+    backgroundColor: '#DDE9EE'
   },
   header: {
       flex: 2,
@@ -107,7 +106,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row'
   },
   textSign: {
-      color: 'white',
+      color: 'black',
       fontWeight: 'bold'
   }
 });

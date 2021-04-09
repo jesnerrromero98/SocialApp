@@ -16,6 +16,8 @@ import { TabRouter } from '@react-navigation/routers';
 const HomeStack = createStackNavigator();
 const WebStack= createStackNavigator();
 const DetailsStack = createStackNavigator();
+const ProfilesStack = createStackNavigator();
+const ExploresStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -29,7 +31,7 @@ const MainTabScreen = () => (
         component={HomeStackScreen}
         options={{
           tabBarLabel: 'Inicio',
-          tabBarColor: '#009387',
+          tabBarColor: '#EF578E',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
@@ -48,9 +50,10 @@ const MainTabScreen = () => (
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={ProfileStackScreen}
         options={{
           tabBarLabel: 'SOS',
+        
           tabBarColor: '#694fad',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-map" color={color} size={26} />
@@ -62,7 +65,7 @@ const MainTabScreen = () => (
 
        <Tab.Screen
         name="Settings"
-        component={ExploreScreen}
+        component={ExploreStackScreen}
         options={{
           tabBarLabel: 'Ajustes',
           tabBarColor: '#d02860',
@@ -80,7 +83,7 @@ export default MainTabScreen;
 const HomeStackScreen = ({navigation}) => (
 <HomeStack.Navigator screenOptions={{
         headerStyle: {
-        backgroundColor: '#009387',
+        backgroundColor: '#EF578E',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -90,16 +93,24 @@ const HomeStackScreen = ({navigation}) => (
         <HomeStack.Screen name="Home" component={HomeScreen} options={{
         title:'Denuncias',
         headerLeft: () => (
-            <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
+            <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
         }} />
 <WebStack.Screen name="Webview" component={WebviewScreen} options={{
           headerLeft: () => (
-              <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
           )
           }} />
-
-
+<ProfilesStack.Screen name="Lugares Seguro" component={ProfileScreen} options={{
+          headerLeft: () => (
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
+          )
+          }} />
+<DetailsStack.Screen name="Numero de Emergencia" component={DetailsScreen} options={{
+          headerLeft: () => (
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
+          )
+          }} />
 </HomeStack.Navigator>
 );
 
@@ -114,32 +125,50 @@ const DetailsStackScreen = ({navigation}) => (
         }
     }}>
         <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
+        title:'Numeros de Emergencia',
         headerLeft: () => (
             <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
         }} />
-
-<WebStack.Screen name="Webview" component={WebviewScreen} options={{
-          headerLeft: () => (
-              <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-          )
-          }} />
 </DetailsStack.Navigator>
 );
-const WebviewStackScreen = ({navigation}) => (
-  <WebStack.Navigator screenOptions={{
+
+
+const ProfileStackScreen = ({navigation}) => (
+  <ProfilesStack.Navigator screenOptions={{
           headerStyle: {
-          backgroundColor: '#1f65ff',
+          backgroundColor: '#694fad',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
           fontWeight: 'bold'
           }
       }}>
-          <WebStack.Screen name="Webview" component={WebviewScreen} options={{
+          <ProfilesStack.Screen name="Lugares Seguros" component={ProfileScreen} options={{
+          title:'Numeros de Emergencia',
           headerLeft: () => (
-              <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#694fad" onPress={() => navigation.openDrawer()}></Icon.Button>
           )
           }} />
-  </WebStack.Navigator>
-);
+  
+  </ProfilesStack.Navigator>
+  );
+  const ExploreStackScreen = ({navigation}) => (
+    <ExploresStack.Navigator screenOptions={{
+            headerStyle: {
+            backgroundColor: '#d02860',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+            fontWeight: 'bold'
+            }
+        }}>
+            <ExploresStack.Screen name="Setting" component={ExploreScreen} options={{
+            title:'Ajuste',
+            headerLeft: () => (
+                <Icon.Button name="ios-menu" size={25} backgroundColor="#d02860" onPress={() => navigation.openDrawer()}></Icon.Button>
+            )
+            }} />
+    
+    </ExploresStack.Navigator>
+  );

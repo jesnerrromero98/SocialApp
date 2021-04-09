@@ -18,11 +18,12 @@ export default class DetailsScreen extends Component {
     const handleCall3Press = async() =>{
       Linking.openURL("tel: 25121949");
     };
+    const handleCall4Press = async() =>{
+      Linking.openURL("tel: 57636600");
+    };
     return (
       <Container style = {styles.fondo}>
-        <Header style = {styles.container}>
-        <Text style = {styles.titulo}>Numeros de Emergencia</Text>
-        </Header>
+       
         <Content >
         <Text style = {styles.separador}></Text>
             <CardItem style = {styles.columna}
@@ -42,14 +43,6 @@ export default class DetailsScreen extends Component {
                 <Button onPress={handleCallPress} style = {styles.But} >
                    
                   <Text style = {styles.icon}>Llamar</Text>
-                </Button>
-            
-          
-                <Button 
-                  onPress={() => { this.props.navigation.navigate('Webview')}}
-                  style = {styles.But2}>
-            
-                  <Text style = {styles.ic2} >Detalle</Text>
                 </Button>
             
               <Right>       
@@ -74,10 +67,6 @@ export default class DetailsScreen extends Component {
                 </Button>
             
           
-                <Button style = {styles.But2}>
-               
-                  <Text style = {styles.ic2} >Detalle</Text>
-                </Button>
               <Right>
        
               </Right>
@@ -99,9 +88,7 @@ export default class DetailsScreen extends Component {
                   <Button onPress={handleCall3Press} style = {styles.But} >
                     <Text style = {styles.icon}>Llamar</Text>
                   </Button>
-                  <Button style = {styles.But2}>
-                    <Text style = {styles.ic2} >Detalle</Text>
-                  </Button>
+                 
               <Right>
        
               </Right>
@@ -111,6 +98,28 @@ export default class DetailsScreen extends Component {
         <Header style = {styles.container}>
         <Text style = {styles.titulo}>Contacto de Emergencia</Text>
         </Header>
+        <Text style = {styles.separador}></Text>
+            <CardItem style = {styles.columna}>
+              <Left >
+                <Thumbnail 
+                source={require('./../assets/rosa.jpg')} 
+                style = {styles.imagen}
+                />
+                <Body>
+                  <Text style = {styles.tit2} >Rosa Isleydi Arestegui</Text>
+                  <Text style = {styles.ti1} >Juigalpa,CHontales</Text>
+                </Body>
+              </Left>
+          
+                  <Button onPress={handleCall4Press} style = {styles.But} >
+                    <Text style = {styles.icon}>Llamar</Text>
+                  </Button>
+                 
+              <Right>
+       
+              </Right>
+            </CardItem>
+            <Text style = {styles.separador}></Text>
         </Content>
       </Container>
     );
@@ -118,7 +127,7 @@ export default class DetailsScreen extends Component {
 }
 const styles =  StyleSheet.create({
   container:{
-      backgroundColor: '#9599B3',
+      backgroundColor: '#1f65ff',
       flexDirection: 'column',
       alignItems: 'center',
     
@@ -176,6 +185,7 @@ icon:{
   marginTop: 55,
   marginLeft:3,
   color: "#ffffff", 
+
   
 },
 ic2:{
@@ -184,8 +194,8 @@ ic2:{
 But:{
   width: 95,
   height: 45,
-  marginTop:50,
-  marginLeft:90,
+  marginTop:90,
+  marginLeft:120,
   borderRadius:15,
   backgroundColor:"#EF578E"
 },

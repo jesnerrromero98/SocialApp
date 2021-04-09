@@ -5,19 +5,26 @@
 import React from 'react';
 // Import required components
 import { SafeAreaView, StyleSheet, View } from 'react-native';
+import {  Header,  Text, Container, } from 'native-base';
 
 // Import Map and Marker
 import MapView, { Marker } from 'react-native-maps';
 
-const App = () => {
+const ProfileScreen = () => {
+  
   return (
+    <Container>
+  <Header style = {styles.hola}>
+        <Text style = {styles.titulo}>Lugares Seguros</Text>
+   </Header>
+   </Container>,
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <MapView
           style={styles.mapStyle}
           initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
+            latitude: 		12.10629,
+            longitude: 		-85.36452,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
@@ -46,13 +53,26 @@ const App = () => {
             title={'Lugar Seguro'}
             description={'Aqui Puedes Resguardarte de Cualquier Situacion Peligrosa'}
           />
+           <Marker
+            draggable
+            coordinate={{
+             
+              latitude:  12.09716289163202, 
+              longitude: -85.37062449398461,
+            }}
+            onDragEnd={
+              (e) => alert(JSON.stringify(e.nativeEvent.coordinate))
+            }
+            title={'Lugar Seguro'}
+            description={'Aqui Puedes Resguardarte de Cualquier Situacion Peligrosa'}
+          />
         </MapView>
       </View>
     </SafeAreaView>
   );
 };
 
-export default App;
+export default ProfileScreen;
 
 const mapStyle = [
   { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
@@ -152,4 +172,16 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
+  hola:{
+    backgroundColor: '#1f65ff',
+    flexDirection: 'column',
+    alignItems: 'center',
+  
+  },
+  titulo:{
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: "#ffffff",
+    textAlign:'center'
+  }
 });

@@ -1,84 +1,4 @@
-/*import { Card } from 'native-base';
-import React from 'react';
-
-import { StyleSheet, Text,View,  FlatList,  RefreshControl,refreshing,onRefresh } from 'react-native';
-import DetailsScreen from './DetailsScreen';
-import ExploreScreen from './ExploreScreen';
-
-import CardsScreen from './Card';
-import {Buttom} from 'react-native'
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
-
-
-const HomeScreen = (props) => {
-
-  const {
-  } = props;
-
-  return(
-
-    <Container style = {styles.fondo}>
-        
-    <Content >
-    <TouchableOpacity
-     onPress={this.onPressx}
-    >
-    <Text style = {styles.separador}></Text>
-        <CardItem style = {styles.columna}>
-        <Text style = {styles.tit2} >Denuncia</Text>
-             
-         <Image 
-            source={require('./../assets/mega.png')} 
-            style = {styles.imagen}
-            
-            />                           
-      
-        
-        </CardItem>
-        </TouchableOpacity>
-               </Content>
-               
-    </Container>
-
-  );
-
-}
-
-
-
-
-  const styles=StyleSheet.create({
-      container:{
-  
-          backgroundColor: '#9599B3',
-          flexDirection: 'column',
-          alignItems: 'center',
-      },
-
-      fondo:{
-          backgroundColor: '#fafafa',
-      },
-
-      titulo:{
-          marginTop:5,
-          fontSize:22,
-          marginLeft:10,
-          backgroundColor:'#ffffff',
-          fontWeight: 'bold'
-      },
-      ti1:{
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: '#98cb40',
-       marginTop:1,
-        marginHorizontal:10,
-        textAlign:'auto'
-      },
-
-  })
-  export default HomeScreen;*/
-
-  import React, { Component } from 'react';
+import React, { Component } from 'react';
 import  { Image, Linking , StyleSheet, TouchableOpacity }
 from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
@@ -90,8 +10,12 @@ class CardsScreen extends Component {
   onPressx = () => {
     this.props.navigation.navigate('Webview')
   };
-
-
+  onPressxxx = () => {
+    this.props.navigation.navigate('Lugares Seguro')
+  };
+  onPressxxxvv = () => {
+    this.props.navigation.navigate('Numero de Emergencia')
+  };
 render(){
     return (
       <Container style = {styles.fondo}>
@@ -120,14 +44,14 @@ render(){
 
         <Content >
         <TouchableOpacity
-          
+            onPress={this.onPressxxx}
         >
         <Text style = {styles.separador}></Text>
             <CardItem style = {styles.columna}>
-            <Text style = {styles.tit2} >Denuncia</Text>
+            <Text style = {styles.tit2} >Lugares Seguro</Text>
                  
              <Image 
-                source={require('./../assets/mega.png')} 
+                source={require('./../assets/maps.png')} 
                 style = {styles.imagen}
                 
                 />                           
@@ -139,14 +63,14 @@ render(){
                    
         <Content >
         <TouchableOpacity
-   
+    onPress={this.onPressxxxvv}
         >
         <Text style = {styles.separador}></Text>
             <CardItem style = {styles.columna}>
-            <Text style = {styles.tit2} >Denuncia</Text>
+            <Text style = {styles.tit2} >Numeros de Emergencia</Text>
                  
              <Image 
-                source={require('./../assets/mega.png')} 
+                source={require('./../assets/llaa.png')} 
                 style = {styles.imagen}
                 
                 />                           
@@ -182,7 +106,7 @@ tit2:{
   marginTop:50,
   marginStart:0,
   color: 'white',
-  marginHorizontal:130
+  marginHorizontal:135
 },
 ti1:{
   fontSize: 14,
@@ -215,7 +139,7 @@ imagen:{
   borderRadius: 0,
   marginLeft: 150,
   marginTop:-70,
-  opacity:90
+ 
 },
 separador: {
   width: 10
