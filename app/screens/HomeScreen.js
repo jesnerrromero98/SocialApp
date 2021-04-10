@@ -8,7 +8,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 class CardsScreen extends Component {
 
   onPressx = () => {
-    this.props.navigation.navigate('Webview')
+    this.props.navigation.navigate('Denuncia')
   };
   onPressxxx = () => {
     this.props.navigation.navigate('Lugares Seguro')
@@ -47,7 +47,7 @@ render(){
             onPress={this.onPressxxx}
         >
         <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}>
+            <CardItem style = {styles.columna1}>
             <Text style = {styles.tit2} >Lugares Seguro</Text>
                  
              <Image 
@@ -66,7 +66,7 @@ render(){
     onPress={this.onPressxxxvv}
         >
         <Text style = {styles.separador}></Text>
-            <CardItem style = {styles.columna}>
+            <CardItem style = {styles.columna2}>
             <Text style = {styles.tit2} >Numeros de Emergencia</Text>
                  
              <Image 
@@ -121,6 +121,34 @@ columna:{
  
   width: '95%',
   backgroundColor: '#8A56AC',
+  height: 180,
+  borderTopLeftRadius:15,
+  borderBottomLeftRadius:15,
+  borderBottomRightRadius:15,
+  borderTopRightRadius: 15,
+  marginLeft: 10,
+  marginHorizontal: 10,
+},
+
+columna1:{
+  flexDirection: 'column',
+ 
+  width: '95%',
+  backgroundColor: '#FAAD2A',
+  height: 180,
+  borderTopLeftRadius:15,
+  borderBottomLeftRadius:15,
+  borderBottomRightRadius:15,
+  borderTopRightRadius: 15,
+  marginLeft: 10,
+  marginHorizontal: 10,
+},
+
+columna2:{
+  flexDirection: 'column',
+ 
+  width: '95%',
+  backgroundColor: '#1f65ff',
   height: 180,
   borderTopLeftRadius:15,
   borderBottomLeftRadius:15,

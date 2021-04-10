@@ -54,7 +54,7 @@ const MainTabScreen = () => (
         options={{
           tabBarLabel: 'SOS',
         
-          tabBarColor: '#694fad',
+          tabBarColor: '#FAAD2A',
           tabBarIcon: ({ color }) => (
             <Icon name="ios-map" color={color} size={26} />
           ),
@@ -91,12 +91,12 @@ const HomeStackScreen = ({navigation}) => (
         }
     }}>
         <HomeStack.Screen name="Home" component={HomeScreen} options={{
-        title:'Denuncias',
+        title:'HATI-HATI',
         headerLeft: () => (
             <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
         }} />
-<WebStack.Screen name="Webview" component={WebviewScreen} options={{
+<WebStack.Screen name="Denuncia" component={WebviewScreen} options={{
           headerLeft: () => (
               <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
           )
@@ -108,7 +108,7 @@ const HomeStackScreen = ({navigation}) => (
           }} />
 <DetailsStack.Screen name="Numero de Emergencia" component={DetailsScreen} options={{
           headerLeft: () => (
-              <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#FAAD2A" onPress={() => navigation.openDrawer()}></Icon.Button>
           )
           }} />
 </HomeStack.Navigator>
@@ -137,7 +137,7 @@ const DetailsStackScreen = ({navigation}) => (
 const ProfileStackScreen = ({navigation}) => (
   <ProfilesStack.Navigator screenOptions={{
           headerStyle: {
-          backgroundColor: '#694fad',
+          backgroundColor: '#FAAD2A',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -147,7 +147,7 @@ const ProfileStackScreen = ({navigation}) => (
           <ProfilesStack.Screen name="Lugares Seguros" component={ProfileScreen} options={{
           title:'Numeros de Emergencia',
           headerLeft: () => (
-              <Icon.Button name="ios-menu" size={25} backgroundColor="#694fad" onPress={() => navigation.openDrawer()}></Icon.Button>
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#FAAD2A" onPress={() => navigation.openDrawer()}></Icon.Button>
           )
           }} />
   
