@@ -11,6 +11,7 @@ import DetailsScreen from './DetailsScreen';
 import ExploreScreen from './ExploreScreen';
 import ProfileScreen from './ProfileScreen';
 import WebviewScreen from './WebviewScreen';
+import ServiScreen  from './ServiScreen'
 import { TabRouter } from '@react-navigation/routers';
 
 const HomeStack = createStackNavigator();
@@ -18,6 +19,7 @@ const WebStack= createStackNavigator();
 const DetailsStack = createStackNavigator();
 const ProfilesStack = createStackNavigator();
 const ExploresStack = createStackNavigator();
+const ServiStack=createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -60,8 +62,19 @@ const MainTabScreen = () => (
           ),
         }}
       />
-     
-   
+
+      <Tab.Screen
+        name="Servi"
+        component={ServiStackScreen}
+        options={{
+          tabBarLabel: 'ServicioSocial',
+        
+          tabBarColor: '#FAAD2A',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-map" color={color} size={26} />
+          ),
+        }}
+      />
 
        <Tab.Screen
         name="Settings"
@@ -108,7 +121,7 @@ const HomeStackScreen = ({navigation}) => (
           }} />
 <DetailsStack.Screen name="Numero de Emergencia" component={DetailsScreen} options={{
           headerLeft: () => (
-              <Icon.Button name="ios-menu" size={25} backgroundColor="#FAAD2A" onPress={() => navigation.openDrawer()}></Icon.Button>
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#EF578E" onPress={() => navigation.openDrawer()}></Icon.Button>
           )
           }} />
 </HomeStack.Navigator>
@@ -134,6 +147,25 @@ const DetailsStackScreen = ({navigation}) => (
 );
 
 
+const ServiStackScreen = ({navigation}) => (
+  <ServiStack.Navigator screenOptions={{
+          headerStyle: {
+          backgroundColor: '#1f65ff',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+          fontWeight: 'bold'
+          }
+      }}>
+          <ServiStack.Screen name="Servio social" component={ServiScreen} options={{
+          title:'Servicios Sociales',
+          headerLeft: () => (
+              <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
+          )
+          }} />
+  </ServiStack.Navigator>
+  );
+
 const ProfileStackScreen = ({navigation}) => (
   <ProfilesStack.Navigator screenOptions={{
           headerStyle: {
@@ -145,7 +177,7 @@ const ProfileStackScreen = ({navigation}) => (
           }
       }}>
           <ProfilesStack.Screen name="Lugares Seguros" component={ProfileScreen} options={{
-          title:'Numeros de Emergencia',
+          title:'Lugares Seguros',
           headerLeft: () => (
               <Icon.Button name="ios-menu" size={25} backgroundColor="#FAAD2A" onPress={() => navigation.openDrawer()}></Icon.Button>
           )
@@ -172,3 +204,4 @@ const ProfileStackScreen = ({navigation}) => (
     
     </ExploresStack.Navigator>
   );
+  

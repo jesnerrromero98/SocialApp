@@ -162,6 +162,14 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    //signingConfigs{
+    //debug {
+      //  storeFile file('MY_RELEASE_STORE_FILE')
+       // storePassword 'MYAPP_RELEASE_STORE_PASSWORD'
+        //keyAlias 'MYAPP_RELEASE_KEY_ALIAS'
+        //keyPassword 'MYAPP_RELEASE_KEY_PASSWORD'
+        //}
+    //}
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -177,6 +185,7 @@ android {
         }
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
